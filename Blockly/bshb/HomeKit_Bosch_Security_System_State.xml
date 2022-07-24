@@ -1,0 +1,425 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+  <variables>
+    <variable id="/P7;gj;U0=XFN?T-nDo+">profile</variable>
+    <variable id="|b:1%0FB9.:+GG(^=u{J">state</variable>
+  </variables>
+  <block type="create" id="]`jhv-ST6gm1um=Or(P!" x="412" y="-213">
+    <field name="NAME">bshb.0.SecuritySystemTargetState</field>
+    <value name="VALUE">
+      <block type="math_number" id="a(y}`1oA?mpCNH6;Uw8p">
+        <field name="NUM">3</field>
+      </block>
+    </value>
+    <value name="COMMON">
+      <block type="text" id="!^Ph~=+lTax0TR|bAK;n">
+        <field name="TEXT">{ "type": "number", "role": "state", "read": true, "write": true, "min": 0, "max": 3 }</field>
+      </block>
+    </value>
+    <statement name="STATEMENT">
+      <block type="on" id="#_L}8[m/O2lN*2N7UB=U">
+        <field name="OID">javascript.0.bshb.0.SecuritySystemTargetState</field>
+        <field name="CONDITION">any</field>
+        <field name="ACK_CONDITION">false</field>
+        <statement name="STATEMENT">
+          <block type="controls_if" id="t#$J8Tp=?bg@3rrARD@V">
+            <mutation elseif="2" else="1"></mutation>
+            <value name="IF0">
+              <block type="logic_compare" id="(o4EC{vCP:|ZOq|cFSzz">
+                <field name="OP">EQ</field>
+                <value name="A">
+                  <block type="on_source" id="Lo$`ENFDq8(dRi/:rEP6">
+                    <field name="ATTR">state.val</field>
+                  </block>
+                </value>
+                <value name="B">
+                  <block type="math_number" id="jq-(]8Ktxj?/qBQ@;/CL">
+                    <field name="NUM">0</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <statement name="DO0">
+              <block type="control" id=".X$ny9p25ijTgY`4NO8|">
+                <mutation xmlns="http://www.w3.org/1999/xhtml" delay_input="false"></mutation>
+                <field name="OID">bshb.0.intrusionDetectionControl.individualProtection</field>
+                <field name="WITH_DELAY">FALSE</field>
+                <value name="VALUE">
+                  <block type="logic_boolean" id="_8^ijUft;j2t~TJKR3:@">
+                    <field name="BOOL">TRUE</field>
+                  </block>
+                </value>
+              </block>
+            </statement>
+            <value name="IF1">
+              <block type="logic_compare" id="#@Z%;nSEFm7DBk:VaQa5">
+                <field name="OP">EQ</field>
+                <value name="A">
+                  <block type="on_source" id="~BCz:u8`]hy0;ZH~2B5J">
+                    <field name="ATTR">state.val</field>
+                  </block>
+                </value>
+                <value name="B">
+                  <block type="math_number" id="c@n(Ml#R;505cKxIuLtZ">
+                    <field name="NUM">1</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <statement name="DO1">
+              <block type="control" id="ICAT6+9UFmhVTf+[iOlV">
+                <mutation xmlns="http://www.w3.org/1999/xhtml" delay_input="false"></mutation>
+                <field name="OID">bshb.0.intrusionDetectionControl.fullProtection</field>
+                <field name="WITH_DELAY">FALSE</field>
+                <value name="VALUE">
+                  <block type="logic_boolean" id="+G.;#~$NB2L2rrZBP21R">
+                    <field name="BOOL">TRUE</field>
+                  </block>
+                </value>
+              </block>
+            </statement>
+            <value name="IF2">
+              <block type="logic_compare" id="]h?Tv=6ZmjoKRh2/nbex">
+                <field name="OP">EQ</field>
+                <value name="A">
+                  <block type="on_source" id="%Zfs|;zWxNIqoBFI+y/#">
+                    <field name="ATTR">state.val</field>
+                  </block>
+                </value>
+                <value name="B">
+                  <block type="math_number" id="D1gy8eZbv-CnNBN?0_Gv">
+                    <field name="NUM">2</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <statement name="DO2">
+              <block type="control" id="v;l*;#=iu];PQ@j7CfK)">
+                <mutation xmlns="http://www.w3.org/1999/xhtml" delay_input="false"></mutation>
+                <field name="OID">bshb.0.intrusionDetectionControl.partialProtection</field>
+                <field name="WITH_DELAY">FALSE</field>
+                <value name="VALUE">
+                  <block type="logic_boolean" id="YDdB42)ZPoh,HV,OYjRJ">
+                    <field name="BOOL">TRUE</field>
+                  </block>
+                </value>
+              </block>
+            </statement>
+            <statement name="ELSE">
+              <block type="control" id="/8BETnX_C/)o?6ZHyD0A">
+                <mutation xmlns="http://www.w3.org/1999/xhtml" delay_input="false"></mutation>
+                <field name="OID">bshb.0.intrusionDetectionControl.disarmProtection</field>
+                <field name="WITH_DELAY">FALSE</field>
+                <value name="VALUE">
+                  <block type="logic_boolean" id="kWogCyNj=u)8N_M|@qU;">
+                    <field name="BOOL">TRUE</field>
+                  </block>
+                </value>
+              </block>
+            </statement>
+          </block>
+        </statement>
+        <next>
+          <block type="create" id="61H9;-I2PJbmbfH51Th;">
+            <field name="NAME">bshb.0.SecuritySystemCurrentState</field>
+            <value name="VALUE">
+              <block type="math_number" id="1cSYIL$RE[zPwzV)NJxU">
+                <field name="NUM">3</field>
+              </block>
+            </value>
+            <value name="COMMON">
+              <block type="text" id="IAO)XSAGHNK,;(-?`*;A">
+                <field name="TEXT">{ "type": "number", "role": "state", "read": true, "write": false, "min": 0, "max": 4 }</field>
+              </block>
+            </value>
+            <statement name="STATEMENT">
+              <block type="on" id="p^;EMT49uKUtjUAICM$W">
+                <field name="OID">bshb.0.intrusionDetectionSystem.SurveillanceAlarm.value</field>
+                <field name="CONDITION">ne</field>
+                <field name="ACK_CONDITION">true</field>
+                <statement name="STATEMENT">
+                  <block type="controls_if" id="^Ms`Nj0us?0Q_aotUQ-%">
+                    <mutation elseif="1"></mutation>
+                    <value name="IF0">
+                      <block type="logic_operation" id="fS`!H=xf5=8oEgmyas:[" inline="false">
+                        <field name="OP">OR</field>
+                        <value name="A">
+                          <block type="logic_compare" id="4iT+?!/P|ZI@HLF=QpvI">
+                            <field name="OP">EQ</field>
+                            <value name="A">
+                              <block type="on_source" id="J-^NU0#vh+o_g@]-*;SC">
+                                <field name="ATTR">state.val</field>
+                              </block>
+                            </value>
+                            <value name="B">
+                              <block type="text" id=".djrFcoeFNh;ik{Z9RbN">
+                                <field name="TEXT">ALARM_ON</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <value name="B">
+                          <block type="logic_compare" id="~_q@]8*Dp#=x=R)[du##">
+                            <field name="OP">EQ</field>
+                            <value name="A">
+                              <block type="on_source" id="*~@~?C^6xzV*T;a46,%D">
+                                <field name="ATTR">state.val</field>
+                              </block>
+                            </value>
+                            <value name="B">
+                              <block type="text" id="p,O/1lyTvh?W-Ma.]`bf">
+                                <field name="TEXT">ALARM_MUTED</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <statement name="DO0">
+                      <block type="update" id="{qP)_Up`:o5[Md|!HA#*">
+                        <mutation xmlns="http://www.w3.org/1999/xhtml" delay_input="false"></mutation>
+                        <field name="OID">javascript.0.bshb.0.SecuritySystemCurrentState</field>
+                        <field name="WITH_DELAY">FALSE</field>
+                        <value name="VALUE">
+                          <block type="math_number" id="+Af6rY5*s;y5bCf4%!yb">
+                            <field name="NUM">4</field>
+                          </block>
+                        </value>
+                      </block>
+                    </statement>
+                    <value name="IF1">
+                      <block type="logic_compare" id="s_up`]AzdE+P*iZU5Khd">
+                        <field name="OP">EQ</field>
+                        <value name="A">
+                          <block type="on_source" id="hX(|Z6}ytPs@/1(Oxjm_">
+                            <field name="ATTR">state.val</field>
+                          </block>
+                        </value>
+                        <value name="B">
+                          <block type="text" id="bT$1x)(HG1m2ol)V55L0">
+                            <field name="TEXT">ALARM_OFF</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <statement name="DO1">
+                      <block type="update" id="-SO548r5;nW$Jo^(/(Xj">
+                        <mutation xmlns="http://www.w3.org/1999/xhtml" delay_input="false"></mutation>
+                        <field name="OID">javascript.0.bshb.0.SecuritySystemCurrentState</field>
+                        <field name="WITH_DELAY">FALSE</field>
+                        <value name="VALUE">
+                          <block type="get_value" id="[IKQ=b_7a*Q``ZpX4$U3">
+                            <field name="ATTR">val</field>
+                            <field name="OID">javascript.0.bshb.0.SecuritySystemTargetState</field>
+                          </block>
+                        </value>
+                      </block>
+                    </statement>
+                  </block>
+                </statement>
+                <next>
+                  <block type="on" id="hHdy1obW}d/}[F.!Z]va">
+                    <field name="OID">bshb.0.intrusionDetectionSystem.IntrusionDetectionControl.value</field>
+                    <field name="CONDITION">ne</field>
+                    <field name="ACK_CONDITION">true</field>
+                    <statement name="STATEMENT">
+                      <block type="variables_set" id="3g0]0BSBgC#qLiN-rRr2">
+                        <field name="VAR" id="/P7;gj;U0=XFN?T-nDo+">profile</field>
+                        <value name="VALUE">
+                          <block type="get_value" id="*G5[Qg6Z^gl}k;F5dU:i">
+                            <field name="ATTR">val</field>
+                            <field name="OID">bshb.0.intrusionDetectionSystem.IntrusionDetectionControl.activeProfile</field>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="controls_if" id="-r=?CZ`H-buMb7+P[wZW">
+                            <mutation elseif="1" else="1"></mutation>
+                            <value name="IF0">
+                              <block type="logic_compare" id="]Wlt8H?:l%o0vcGFI6)r">
+                                <field name="OP">EQ</field>
+                                <value name="A">
+                                  <block type="variables_get" id="r}INt^W*3f79zA0Rw|-9">
+                                    <field name="VAR" id="/P7;gj;U0=XFN?T-nDo+">profile</field>
+                                  </block>
+                                </value>
+                                <value name="B">
+                                  <block type="math_number" id="g(L[TD4+1]MhvM$CvW[i">
+                                    <field name="NUM">1</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                            <statement name="DO0">
+                              <block type="variables_set" id="Bx8Ape1ofzRCD-psNYY8">
+                                <field name="VAR" id="|b:1%0FB9.:+GG(^=u{J">state</field>
+                                <value name="VALUE">
+                                  <block type="math_number" id="*FW1XZlZT^htXAmltHM*">
+                                    <field name="NUM">2</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </statement>
+                            <value name="IF1">
+                              <block type="logic_compare" id="]{nL42imVmNeMfmMPJ7/">
+                                <field name="OP">EQ</field>
+                                <value name="A">
+                                  <block type="variables_get" id="$HweQx|(tw/,60nJ];iQ">
+                                    <field name="VAR" id="/P7;gj;U0=XFN?T-nDo+">profile</field>
+                                  </block>
+                                </value>
+                                <value name="B">
+                                  <block type="math_number" id="4=,6otn^Yn0%Zg.b=WJO">
+                                    <field name="NUM">2</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                            <statement name="DO1">
+                              <block type="variables_set" id="D+jF$SuK^s`1=XI}Cjs$">
+                                <field name="VAR" id="|b:1%0FB9.:+GG(^=u{J">state</field>
+                                <value name="VALUE">
+                                  <block type="math_number" id=")CXSjY0J{D%1Latt5aJX">
+                                    <field name="NUM">0</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </statement>
+                            <statement name="ELSE">
+                              <block type="variables_set" id="Eu*}99ljw-[TLvbdGqQU">
+                                <field name="VAR" id="|b:1%0FB9.:+GG(^=u{J">state</field>
+                                <value name="VALUE">
+                                  <block type="math_number" id="LqA4`Hl2_6kx7T59?|iA">
+                                    <field name="NUM">1</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </statement>
+                            <next>
+                              <block type="controls_if" id="xNu?1^0SqAJ|$q_b)t%s">
+                                <mutation elseif="2"></mutation>
+                                <value name="IF0">
+                                  <block type="logic_compare" id="F;7x|px;qnfdGDtH~kya">
+                                    <field name="OP">EQ</field>
+                                    <value name="A">
+                                      <block type="on_source" id="$~?w+t*;e{DNHW0(jTc{">
+                                        <field name="ATTR">state.val</field>
+                                      </block>
+                                    </value>
+                                    <value name="B">
+                                      <block type="text" id="iheps~NlY}PzS@hxzkXh">
+                                        <field name="TEXT">SYSTEM_ARMING</field>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </value>
+                                <statement name="DO0">
+                                  <block type="update" id="|X[+;]mcl$N`~%uyp(MG">
+                                    <mutation xmlns="http://www.w3.org/1999/xhtml" delay_input="false"></mutation>
+                                    <field name="OID">javascript.0.bshb.0.SecuritySystemTargetState</field>
+                                    <field name="WITH_DELAY">FALSE</field>
+                                    <value name="VALUE">
+                                      <block type="variables_get" id="L=_n!-KS^,1pkQf57D5x">
+                                        <field name="VAR" id="|b:1%0FB9.:+GG(^=u{J">state</field>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </statement>
+                                <value name="IF1">
+                                  <block type="logic_compare" id="2.=KMGpi$!YqU#q(@(84">
+                                    <field name="OP">EQ</field>
+                                    <value name="A">
+                                      <block type="on_source" id="9{P`SP.Q5r9F(qxoc3JP">
+                                        <field name="ATTR">state.val</field>
+                                      </block>
+                                    </value>
+                                    <value name="B">
+                                      <block type="text" id="4TeS*pfILn=Dz|7QrUQr">
+                                        <field name="TEXT">SYSTEM_ARMED</field>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </value>
+                                <statement name="DO1">
+                                  <block type="update" id="}I)9=l/wCP6.~e6/L[x@">
+                                    <mutation xmlns="http://www.w3.org/1999/xhtml" delay_input="false"></mutation>
+                                    <field name="OID">javascript.0.bshb.0.SecuritySystemTargetState</field>
+                                    <field name="WITH_DELAY">FALSE</field>
+                                    <value name="VALUE">
+                                      <block type="variables_get" id="Hf~Gs$]%Bg[J537Hrwo-">
+                                        <field name="VAR" id="|b:1%0FB9.:+GG(^=u{J">state</field>
+                                      </block>
+                                    </value>
+                                    <next>
+                                      <block type="update" id="F8O,c)_A;[Rnn:qos`H[">
+                                        <mutation xmlns="http://www.w3.org/1999/xhtml" delay_input="true"></mutation>
+                                        <field name="OID">javascript.0.bshb.0.SecuritySystemCurrentState</field>
+                                        <field name="WITH_DELAY">TRUE</field>
+                                        <field name="DELAY_MS">500</field>
+                                        <field name="UNIT">ms</field>
+                                        <field name="CLEAR_RUNNING">TRUE</field>
+                                        <value name="VALUE">
+                                          <block type="variables_get" id="M}3aOu-^=At:P:PS_K.[">
+                                            <field name="VAR" id="|b:1%0FB9.:+GG(^=u{J">state</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </statement>
+                                <value name="IF2">
+                                  <block type="logic_compare" id="lV~**j8?mK:|=[FWR-,n">
+                                    <field name="OP">EQ</field>
+                                    <value name="A">
+                                      <block type="on_source" id="SoU~tXC4NK+4w`y|eE.s">
+                                        <field name="ATTR">state.val</field>
+                                      </block>
+                                    </value>
+                                    <value name="B">
+                                      <block type="text" id="}siy]:k80nD%PrZ/I#1,">
+                                        <field name="TEXT">SYSTEM_DISARMED</field>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </value>
+                                <statement name="DO2">
+                                  <block type="update" id="8s,VhCSdEMThS$pgDrVR">
+                                    <mutation xmlns="http://www.w3.org/1999/xhtml" delay_input="false"></mutation>
+                                    <field name="OID">javascript.0.bshb.0.SecuritySystemTargetState</field>
+                                    <field name="WITH_DELAY">FALSE</field>
+                                    <value name="VALUE">
+                                      <block type="math_number" id="M:H;`7f1zpwws=wWggzJ">
+                                        <field name="NUM">3</field>
+                                      </block>
+                                    </value>
+                                    <next>
+                                      <block type="update" id="irv0u;en()@MtIZxF)GL">
+                                        <mutation xmlns="http://www.w3.org/1999/xhtml" delay_input="true"></mutation>
+                                        <field name="OID">javascript.0.bshb.0.SecuritySystemCurrentState</field>
+                                        <field name="WITH_DELAY">TRUE</field>
+                                        <field name="DELAY_MS">1000</field>
+                                        <field name="UNIT">ms</field>
+                                        <field name="CLEAR_RUNNING">TRUE</field>
+                                        <value name="VALUE">
+                                          <block type="math_number" id="Uwx$%=Uq|`v{,(eC1?tu">
+                                            <field name="NUM">3</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </statement>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </statement>
+                  </block>
+                </next>
+              </block>
+            </statement>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>
